@@ -1,0 +1,81 @@
+<!-- src/main/resources/static/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .upload-card h2 {
+            margin-bottom: 30px;
+            color: #4b0082;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+
+        .btn-upload {
+            background-color: #4b0082;
+            color: white;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-upload:hover {
+            background-color: #6a0dad;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="upload-card">
+    <h2>Hi buddy! Upload Resume</h2>
+    <form method="POST" action="http://localhost:8080/api/resumes/upload" enctype="multipart/form-data">
+        <input type="file" name="files" class="form-control" accept=".pdf,.doc,.docx" multiple required onchange="showSelectedFiles(this.files)" />
+        <button type="submit" class="btn btn-upload">Upload</button>
+    </form>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<ul id="file-list"></ul>
+
+<script>
+    function showSelectedFiles(files) {
+        const list = document.getElementById('file-list');
+        list.innerHTML = '';
+        for (const file of files) {
+            const li = document.createElement('li');
+            li.textContent = file.name;
+            list.appendChild(li);
+        }
+    }
+</script>
+
+</body>
+</html>
