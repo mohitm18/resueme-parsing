@@ -28,5 +28,4 @@ public class ParsingController {
         }
         return ResponseEntity.ok(responses);
     }
-
 }
