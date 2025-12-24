@@ -26,14 +26,14 @@ public class ParsingService {
         Resume resume = new Resume();
 
         // Extract and set fields
-        resume.setName(extractName(text));
+      //  resume.setName(extractName(text));
         resume.setEmail(extractEmail(text));
-        resume.setPhoneNumber(extractPhoneNumber(text));
+     //   resume.setPhoneNumber(extractPhoneNumber(text));
         resume.setLinkedIn(extractLinkedIn(text));
        // resume.setSkills(extractSkills(text));
         resume.setExperience(extractExperienceYears(text));
         resume.setEducation(extractEducation(text));
-        resume.setLocation(extractLocation(text));
+      //  resume.setLocation(extractLocation(text));
 
         return parsingRepository.save(resume);
     }
