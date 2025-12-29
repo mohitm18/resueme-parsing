@@ -28,7 +28,7 @@ public class ParsingService {
         // Extract and set fields
       //  resume.setName(extractName(text));
         resume.setEmail(extractEmail(text));
-     //   resume.setPhoneNumber(extractPhoneNumber(text));
+        resume.setContactNumber(extractPhoneNumber(text));
         resume.setLinkedIn(extractLinkedIn(text));
        // resume.setSkills(extractSkills(text));
         resume.setExperience(extractExperienceYears(text));
